@@ -1,0 +1,320 @@
+/* ============================= */
+/* 🌟 GENERAL LAYOUT */
+/* ============================= */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #1c1c2e, #2d2d44, #3a3a5c);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: auto; /* Allow scrolling */
+  padding: 20px;
+}
+
+/* ============================= */
+/* 🌟 MAIN CONTAINER */
+/* ============================= */
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  gap: 30px;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ============================= */
+/* 🌟 TAX CALCULATOR SECTION */
+/* ============================= */
+.tax-calculator {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  position: relative;
+  overflow: hidden;
+}
+
+.tax-calculator::before {
+  content: url("https://via.placeholder.com/60"); /* Placeholder image */
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  opacity: 0.6;
+}
+
+.calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  align-content: start;
+}
+
+.deductions-section {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.deduction-group {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.deduction-group label {
+  font-size: 0.85em;
+  margin-bottom: 8px;
+  color: #feb47b;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+.tax-calculator input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 1em;
+}
+
+.tax-calculator input:focus {
+  outline: none;
+  border-color: #ff7e5f;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.tax-calculator button {
+  grid-column: 1 / -1;
+  padding: 14px;
+  background: linear-gradient(45deg, #ff7e5f, #feb47b);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin-top: 15px;
+}
+
+.tax-calculator button:hover {
+  transform: translateY(-2px);
+}
+
+/* ============================= */
+/* 🌟 TAX ANALYSIS SECTION */
+/* ============================= */
+.analysis-section {
+  grid-column: 1 / -1;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-size: 1.1em;
+  color: #ff7e5f;
+  position: relative;
+}
+
+.analysis-title {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.analysis-content {
+  color: white;
+  margin-top: 15px;
+  line-height: 1.5;
+}
+
+.analysis-section::after {
+  content: url("https://via.placeholder.com/40"); /* Placeholder image */
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  opacity: 0.7;
+}
+
+/* ============================= */
+/* 🤖 CHATBOT TAXIE SECTION */
+/* ============================= */
+.chatbot-container {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.chat-header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.chat-header h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.chatbox {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.user-msg {
+  align-self: flex-end;
+  background: linear-gradient(45deg, #ff7e5f, #feb47b);
+  color: white;
+  border-radius: 12px 12px 0 12px;
+  padding: 10px 14px;
+  max-width: 80%;
+}
+
+.ai-msg {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px 12px 12px 0;
+  padding: 10px 14px;
+  max-width: 80%;
+}
+
+.input-area {
+  display: flex;
+  gap: 10px;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 0, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 0, 0.05);
+  color: white;
+  font-size: 1em;
+}
+
+.input-area button {
+  padding: 12px 20px;
+  background: linear-gradient(45deg, #ff7e5f, #feb47b);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.input-area button:hover {
+  transform: translateY(-2px);
+}
+
+.chatbot-container::before {
+  content: url("https://via.placeholder.com/50"); /* Placeholder image */
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  opacity: 0.6;
+}
+
+/* ============================= */
+/* 📱 RESPONSIVE DESIGN */
+/* ============================= */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .calculator-grid,
+  .deductions-section {
+    grid-template-columns: 1fr;
+  }
+
+  .deduction-group {
+    margin-bottom: 10px;
+  }
+
+  .tax-calculator button {
+    grid-column: 1 / -1;
+  }
+
+  .chatbot-container {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .input-area {
+    flex-direction: column;
+  }
+
+  .input-area button {
+    width: 100%;
+  }
+}
+
+/* ============================= */
+/* 🎨 SCROLLBAR STYLING */
+/* ============================= */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
