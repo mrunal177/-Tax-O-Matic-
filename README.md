@@ -1,4 +1,15 @@
+
 # -Tax-O-Matic-
+# Tax-o-Matic 🧮
+
+This is a simple tax calculator web app made with Streamlit.
+
+### 🚀 Live App
+
+👉 [Click here to try the app](https://your-subdomain.streamlit.app)
+
+---
+
 AI Tax Assistant
 
 📌 Project Description
